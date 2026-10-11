@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+import "../styles/mobile.css";
+
+import {Image} from "astro:assets";
+import EmailIcon from "../svg/emailiconblack.svg";
+import GitHubIcon from "../svg/githubicon.svg";
+import LinkedInIcon from "../svg/linkedinIcon.svg";
+import ProfileImage from "../img/profilephoto.jpg";
+---
+<main class="mobile-content">
+  <Image
+    class="mobile-placeholder-image"
+    src={ProfileImage}
+    alt="Placeholder Image"
+    width={260}
+    height={260}
+  />
+  <section class="name-section">
+    <h1>RAY LEE</h1>
+    <div class="mobile-description">
+      <h3>Software Engineer</h3>
+      <p>Strong <span class="highlight">fundamentals</span> in an AI world.</p>
+    </div>
+  </section>
+  <div class="mobile-icons" aria-label="Contact links">
+    <a class="mobile-icon-link" href="mailto:aspectedhelios@proton.me" aria-label="Send email">
+      <EmailIcon />
+    </a>
+    <a
+      class="mobile-icon-link"
+      href="https://github.com/xsol1827x"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit GitHub profile"
+    >
+      <GitHubIcon />
+    </a>
+    <a
+      class="mobile-icon-link"
+      href="https://www.linkedin.com/in/rdklee/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit LinkedIn profile"
+    >
+      <LinkedInIcon />
+    </a>
+  </div>
+</main>

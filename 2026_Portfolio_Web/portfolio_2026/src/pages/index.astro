@@ -1,0 +1,31 @@
+---
+import DesktopSite from "../components/Desktop.astro";
+import MobileSite from "../components/Mobile.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RDK</title>
+  </head>
+  <body>
+    <div class="desktop-site"><DesktopSite /></div>
+    <div class="mobile-site"><MobileSite /></div>
+  </body>
+</html>
+
+<style>
+  .mobile-site {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .desktop-site {
+      display: none;
+    }
+
+    .mobile-site {
+      display: block;
+    }
+  }
+</style>

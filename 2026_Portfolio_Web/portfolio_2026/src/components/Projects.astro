@@ -1,0 +1,42 @@
+---
+import "../styles/projects.css";
+import {Image} from "astro:assets";
+
+import Button from "../components/Button.astro";
+
+import MusicHereProjectIcon from "../img/MusicHere.png";
+import RabbitCactusImg from "../img/RabbitCactus.png";
+import MTCProjectImg from "../img/MTC.png";
+--- 
+
+<div class="projects" id="projects">
+    <div class="projects-container">
+        <div class="project-card">
+            <div><Image src={MusicHereProjectIcon} alt="MusicHere Project" />
+                <div class="project-description">
+                    <h2>MusicHere</h2>
+                    <p>A project created using the Spotify API, a mock up of a music platform website.</p>
+                    <Button text="GitHub" color="#FFFF" href="https://github.com/xsol1827x/Music-Here" />
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div><Image src={RabbitCactusImg} alt="Rabbit Cactus Project" />
+                <div class="project-description">
+                    <h2>Rabbit Cactus</h2>
+                    <p>A web application that helps the user find their new indoor plant buddy. This project is made by Domi, a web dev project group that I am a part of.</p>
+                    <Button text="GitHub" color="#FFFF" href="https://github.com/xsol1827x/domi_rbcactus_deploy" />
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div><Image src={MTCProjectImg} alt="MTC Project" />
+                <div class="project-description">
+                    <h2>My Travel Companion</h2>
+                    <p>This is a web application based on a product idea, a website and mobile phone application that helps users log their travels, share travel information and tips with others.</p>
+                    <Button text="GitHub" color="#FFFF" href="https://github.com/xsol1827x/reactjs-projects/tree/travel-app" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

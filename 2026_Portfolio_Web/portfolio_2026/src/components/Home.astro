@@ -1,0 +1,24 @@
+---
+import "../styles/home.css";
+import {Image} from "astro:assets";
+import ProfileImage from "../img/profilephoto.jpg";
+--- 
+
+<div class="home-container" id="about">
+    <Image
+        class="home-profile-image"
+        src={ProfileImage}
+        alt="Profile Image"
+    />
+    <div class="home-content">
+        <div class="text-center" id="name"><h1>RAY LEE</h1></div>
+        <div class="sub-container">
+            <div class="text-center" id="title"><h2>Software Engineer</h2></div>
+            <div class="text-center" id="description">
+                <p>Strong <span class="highlight">fundamentals</span> in an AI world.</p>
+                <p>Experience in <span class="highlight">full-stack</span> development.</p>
+                <p>My interests are in <span class="highlight">cybersecurity</span> and secure coding practices.</p>
+            </div>
+        </div>
+    </div>
+</div>

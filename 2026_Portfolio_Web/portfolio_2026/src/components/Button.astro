@@ -1,0 +1,14 @@
+---
+import "../styles/button.css";
+type Props = {
+	text?: string;
+	color?: string;
+	href: string;
+};
+
+const { text = 'Button', color = 'currentColor', href } = Astro.props;
+---
+
+<a class="button" href={href} target="_blank" rel="noopener noreferrer" style={`--button-color: ${color}`}>
+	{text}
+</a>

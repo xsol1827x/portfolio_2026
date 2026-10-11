@@ -1,0 +1,37 @@
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 7vw, 8.875rem);
+    width: 100%;
+    min-height: 56px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.navBar a {
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.navBar a:hover {
+    color: #E76F51;
+}
+
+@media (max-width: 1599px) {
+    .navBar {
+        gap: clamp(0.75rem, 4vw, 2.5rem);
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .navBar {
+        gap: 0.5rem 1rem;
+        flex-wrap: wrap;
+    }
+}

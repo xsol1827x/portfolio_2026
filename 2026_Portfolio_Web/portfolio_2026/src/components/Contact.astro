@@ -1,0 +1,101 @@
+---
+import "../styles/contact.css";
+import EmailIcon from "../svg/emailiconblack.svg";
+import GitHubIcon from "../svg/githubicon.svg";
+import LinkedInIcon from "../svg/linkedinIcon.svg";
+import CopyIcon from "../svg/copyicon.svg";
+---
+
+<div class="contact" id="contact">
+    <div class="contact-content">
+        <div class="contact-container">
+            <h1>Contact</h1>
+        </div>
+        <div class="contact-card-group">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <a href="mailto:aspectedhelios@proton.me" aria-label="Send email">
+                        <EmailIcon />
+                    </a>
+                </div>
+                <div class="contact-desc">
+                    <h2>Email</h2>
+                    <div class="contact-value">
+                        <p>aspectedhelios@proton.me</p>
+                        <button class="contact-copy" type="button" aria-label="Copy email address">
+                            <CopyIcon />
+                        </button>
+                        <span class="contact-copy-status" role="status" aria-live="polite"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <a href="https://github.com/xsol1827x" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
+                        <GitHubIcon />
+                    </a>
+                </div>
+                <div class="contact-desc">
+                    <h2>GitHub</h2>
+                    <div class="contact-value">
+                        <p>github.com/xsol1827x</p>
+                        <button class="contact-copy" type="button" aria-label="Copy GitHub">
+                            <CopyIcon />
+                        </button>
+                        <span class="contact-copy-status" role="status" aria-live="polite"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <a href="https://www.linkedin.com/in/rdklee/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+                        <LinkedInIcon />
+                    </a>
+                </div>
+                <div class="contact-desc">
+                    <h2>LinkedIn</h2>
+                    <div class="contact-value">
+                        <p>linkedin.com/in/rdklee</p>
+                        <button class="contact-copy" type="button" aria-label="Copy LinkedIn">
+                            <CopyIcon />
+                        </button>
+                        <span class="contact-copy-status" role="status" aria-live="polite"></span>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.querySelectorAll<HTMLButtonElement>(".contact-copy").forEach((button) => {
+                    const contactValue = button.closest(".contact-value");
+                    const text = contactValue?.querySelector("p")?.textContent?.trim();
+                    const status = contactValue?.querySelector(".contact-copy-status");
+
+                    if (!text || !(status instanceof HTMLElement)) {
+                        console.error("Contact copy button is missing its text or status element.");
+                        return;
+                    }
+
+                    let timeoutId: number | undefined;
+
+                    button.addEventListener("click", async () => {
+                        try {
+                            await navigator.clipboard.writeText(text);
+                            status.textContent = "Copied to clipboard";
+                        } catch {
+                            status.textContent = "Copy failed";
+                        }
+
+                        status.classList.add("is-visible");
+                        window.clearTimeout(timeoutId);
+                        timeoutId = window.setTimeout(() => {
+                            status.classList.remove("is-visible");
+                            window.setTimeout(() => {
+                                status.textContent = "";
+                            }, 250);
+                        }, 2000);
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
