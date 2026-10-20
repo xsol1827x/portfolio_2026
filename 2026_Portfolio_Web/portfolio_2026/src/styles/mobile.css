@@ -53,7 +53,6 @@
     align-items: center;
     justify-content: center;
     gap: clamp(0.5rem, 2vw, 1.5rem);
-    margin-top: auto;
     padding-top: 1rem;
 }
 
